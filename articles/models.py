@@ -20,3 +20,6 @@ class Article(models.Model):
 
   def __str__(self): #to look at title of objects when looking at all objects #this is a built funtion which defines how an article will look in admin section and in shell
     return self.title
+  
+  def snippet(self):
+    return self.body[:50] + '...' # :50 up to 50 characters
