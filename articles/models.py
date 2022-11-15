@@ -15,7 +15,7 @@ class Article(models.Model):
   slug = models.SlugField()
   body = models.TextField()
   date = models.DateTimeField(auto_now_add=True)
-  #add in thumbnail
+  thumb = models.ImageField(default='default.png', blank=True)
   #add in author
 
   def __str__(self): #to look at title of objects when looking at all objects #this is a built funtion which defines how an article will look in admin section and in shell
