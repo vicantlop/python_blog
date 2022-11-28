@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 # migrations - data migrated to database - we have to make a migration file
@@ -16,7 +17,7 @@ class Article(models.Model):
   body = models.TextField()
   date = models.DateTimeField(auto_now_add=True)
   thumb = models.ImageField(default='default.png', blank=True)
-  #add in author
+  author = models.ForeignKey(User,on_delete=models.CASCADE,default=None)
 
   def __str__(self): #to look at title of objects when looking at all objects #this is a built funtion which defines how an article will look in admin section and in shell
     return self.title
